@@ -176,6 +176,11 @@
                 <p>Heating and cooling system experts</p>
             </a>
 
+            <a href="/hvac-direct/" class="service-card">
+                <h2>❄️ HVAC Direct</h2>
+                <p>Quick and direct HVAC quotes</p>
+            </a>
+
             <a href="/roofing/" class="service-card">
                 <h2>🏠 Roofing Services</h2>
                 <p>Quality roofing installation and maintenance</p>
