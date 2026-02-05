@@ -10,7 +10,7 @@
 class LeadAPI
 {
     private $apiUrl = 'https://leadvantage.co/api/251ec0f1b1dc03c8f8c728f537586e51f0db/';
-    private $timeout = 60;
+    private $timeout = 120;
     private $maxRedirects = 4;
 
     /**
@@ -186,11 +186,11 @@ class LeadAPI
         if (stripos($result, 'SUCCESS') !== false) {
             return [
                 'success' => true,
-//                'message' => $result
+                //                'message' => $result
                 'message' => "Thank you for contacting us. We will be in touch with you soon."
             ];
         } else {
-            if (stripos(strtolower($result), 'no partner') !== false){
+            if (stripos(strtolower($result), 'no partner') !== false) {
                 return [
                     'success' => true,
                     'message' => "Thank you for contacting us. We will be in touch with you soon."
