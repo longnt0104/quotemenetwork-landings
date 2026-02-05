@@ -16,11 +16,8 @@ $payloadHash = hash_hmac($algo, $payload, $secret);
 if ($hash !== $payloadHash) {
     die('Invalid secret.');
 }
-// Define the custom SSH command
-// 1. Point to the specific key (-i ...)
-// 2. Auto-accept GitHub's fingerprint (-o StrictHostKeyChecking=no)
-$sshCommand = 'ssh -i /home/www/qmn_landings/.ssh/id_ed25519 -o StrictHostKeyChecking=no';
-
+// We add 'IdentitiesOnly=yes' so it doesn't even TRY to peek at your secured id_ed25519 file
+$sshCommand = 'ssh -i /home/www/qmn_landings/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=no';
 // Run git pull using that environment variable
 $output = shell_exec("GIT_SSH_COMMAND='$sshCommand' git pull origin main 2>&1");
 
