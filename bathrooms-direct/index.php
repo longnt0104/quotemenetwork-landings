@@ -280,6 +280,14 @@ if (!empty($_GET)) {
     .footerLinks a:hover {
       text-decoration: underline;
     }
+
+    .feature-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      display: block;
+    }
   </style>
   <!-- Place in <head> tag -->
   <script async defer src="https://cdn.affonso.io/js/pixel.min.js" data-affonso="cmkouamw8001krjwj29mjsw5j"
@@ -312,6 +320,7 @@ if (!empty($_GET)) {
 
   <div class="wrap">
     <div class="card">
+      <img src="./images/image.png" alt="Bathroom Remodel" class="feature-img">
       <div class="top">
         <h1>Get Free Bathroom Remodel Quotes</h1>
         <p>Answer a few quick questions. We’ll match you with local bathroom remodeling pros.</p>

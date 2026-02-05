@@ -187,6 +187,11 @@
                 <p>Quality roofing installation and maintenance</p>
             </a>
 
+            <a href="/roof-rejuvenation/" class="service-card">
+                <h2>🏠 Roof Rejuvenation</h2>
+                <p>Extend the life of your roof without replacement</p>
+            </a>
+
             <a href="/flooring/" class="service-card">
                 <h2>📐 Flooring Services</h2>
                 <p>Professional flooring installation and refinishing</p>
