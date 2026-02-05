@@ -290,7 +290,7 @@ if (!empty($_GET)) {
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -348,6 +348,11 @@ if (!empty($_GET)) {
           <!-- Step 4 -->
 
 
+          <div class="field">
+            <label for="zip">ZIP code</label>
+            <input id="zip" name="zip" type="text" inputmode="numeric" maxlength="10" required>
+          </div>
+
           <div class="grid2">
             <div class="field">
               <label for="first_name">First name</label>
@@ -360,28 +365,26 @@ if (!empty($_GET)) {
           </div>
 
           <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+            <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">Used only for quote follow-up. No spam.</div>
+          </div>
+
+          <div class="field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" required>
           </div>
 
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-          </div>
-
-          <div class="field">
-            <label for="zip">ZIP code</label>
-            <input id="zip" name="zip" type="text" inputmode="numeric" maxlength="10" required>
-          </div>
-
           <div class="fineprint">
-            By clicking “Get My Free Quote”, you agree to our
+            By clicking “Check My Options”, you agree to our
             <a href="./privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>.
           </div>
         </section>
 
-        <div class="navBtns">
-          <button type="submit" class="btn btn-primary" id="submitBtn">Get My Free Quote</button>
+        <div class="navBtns" style="display: block; text-align: center;">
+          <p style="margin: 0 0 10px; font-size: 14px; font-weight: 500; color: #374151;">Homeowners in your area are
+            comparing quotes for bathroom remodels. Takes 30 seconds.</p>
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="width: 100%;">Check My Options</button>
         </div>
 
         <div class="footerLinks">
