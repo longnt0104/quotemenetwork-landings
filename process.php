@@ -107,6 +107,13 @@ $serviceConfig = [
         'subcat' => 'Gutters - Gutter Installation',
         'postback_enabled' => false,
         'postback_urls' => []
+    ],
+    'roof-rejuvenation' => [
+        'src' => 'QMN Roof Rejuvenation',
+        'product' => 'Roofing',
+        'subcat' => 'Roofing - Roof Rejuvenation',
+        'postback_enabled' => false,
+        'postback_urls' => []
     ]
 ];
 
