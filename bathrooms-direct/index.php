@@ -331,7 +331,7 @@ if (!empty($_GET)) {
       <div id="err" class="error"></div>
 
       <form id="bathForm" method="post" action="../process.php" novalidate>
-        <input type="hidden" name="_service" value="bathrooms">
+        <input type="hidden" name="_service" value="bathrooms-direct">
         <!-- Optional tracking -->
         <input type="hidden" name="SUB2" value="<?php echo htmlspecialchars($sub2); ?>">
         <input type="hidden" name="SRC" value="<?php echo htmlspecialchars($src); ?>">

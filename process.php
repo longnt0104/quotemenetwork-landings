@@ -59,6 +59,13 @@ $serviceConfig = [
         'postback_enabled' => false,
         'postback_urls' => []
     ],
+    'hvac-direct' => [
+        'src' => 'QMN HVAC Direct',
+        'product' => 'Heating-Cooling',
+        'subcat' => 'Heating-Cooling - Heating and Cooling Installation',
+        'postback_enabled' => false,
+        'postback_urls' => []
+    ],
     'painting' => [
         'src' => 'QMN Painting',
         'product' => 'Painting',
@@ -89,6 +96,13 @@ $serviceConfig = [
     ],
     'bathrooms' => [
         'src' => 'QMN Bathrooms',
+        'product' => 'Remodels',
+        'subcat' => 'Remodels - Bathroom Remodel',
+        'postback_enabled' => false,
+        'postback_urls' => []
+    ],
+    'bathrooms-direct' => [
+        'src' => 'QMN Bathrooms Direct',
         'product' => 'Remodels',
         'subcat' => 'Remodels - Bathroom Remodel',
         'postback_enabled' => false,
@@ -202,8 +216,26 @@ $response = $api->submitLead($leadData);
 if ($response['success']) {
     // Handle SUB2 postback
     if (!empty($sub2)) {
-        $postback = "https://www.rzmef8trk.com/?nid=3049&verification_token=daHqoQfKqoIieSWNcAQthjqF6s6DOH&transaction_id=" . $sub2 . "&amount=30";
-        @file_get_contents($postback);
+
+        $sub2 = urlencode($sub2);
+
+        $url = "https://www.rzmef8trk.com/?nid=3049&verification_token=daHqoQfKqoIieSWNcAQthjqF6s6DOH&transaction_id={$sub2}&amount=30";
+
+        $parts = parse_url($url);
+
+        $host = $parts['host'];
+        $path = $parts['path'] . '?' . $parts['query'];
+
+        $fp = fsockopen('ssl://' . $host, 443, $errno, $errstr, 1);
+        if ($fp) {
+            $out = "GET $path HTTP/1.1\r\n";
+            $out .= "Host: $host\r\n";
+            $out .= "Connection: Close\r\n\r\n";
+
+            fwrite($fp, $out);
+            fclose($fp);
+        }
+
     }
 
     // Success: redirect to thank you page
