@@ -105,6 +105,7 @@ class LeadAPI
             'phonetype',
             'city',
             'state',
+            'county',
             'propertytype',
             'project_budget',
             'project_status',

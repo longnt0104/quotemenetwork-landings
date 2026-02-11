@@ -179,8 +179,16 @@ if (!$service || !isset($serviceConfig[$service])) {
 $config = $serviceConfig[$service];
 
 // Initialize API
+require_once __DIR__ . '/ZipLookup.php';
 $api = new LeadAPI();
 $sub2 = pick("SUB2");
+
+// Lookup city/state/county from ZIP
+$zip = pick("zip");
+$geo = ZipLookup::lookup($zip);
+$city = $geo['city'] ?? '';
+$state = $geo['state'] ?? '';
+$county = $geo['county'] ?? '';
 
 // Build lead data
 $leadData = [
@@ -202,6 +210,9 @@ $leadData = [
     'project_budget' => pick("budget"),
     'timeframe' => pick("timeline"),
     'ipAddress' => get_client_ip(),
+    'city' => $city,
+    'state' => $state,
+    'county' => $county,
 
     // SUB2 tracking
     'attribute1' => $sub2,
