@@ -22,7 +22,7 @@ if ($aUrl != null) {
 $sub2 = '';
 if (!empty($_GET)) {
   foreach ($_GET as $key => $val) {
-    if (strcasecmp($key, 'sub2') === 0) {
+    if (strcasecmp($key, 'sub2') === 0 || strcasecmp($key, 's2') === 0) {
       $sub2 = $val;
       break;
     }
@@ -290,7 +290,7 @@ if (!empty($_GET)) {
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;

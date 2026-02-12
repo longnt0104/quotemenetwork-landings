@@ -249,6 +249,27 @@ if ($response['success']) {
 
     }
 
+    // Handle CapCloud postback for 'bathrooms'
+    if ($service === 'bathrooms' && !empty($sub2)) {
+        $sub2 = urlencode($sub2);
+        // http://www.capcloudrunr.com/aff_lsr?transaction_id={s2}
+        $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$sub2}";
+
+        // Fire and forget (simple GET)
+        $parts = parse_url($url);
+        $host = $parts['host'];
+        $path = $parts['path'] . '?' . $parts['query'];
+
+        $fp = fsockopen($host, 80, $errno, $errstr, 1);
+        if ($fp) {
+            $out = "GET $path HTTP/1.1\r\n";
+            $out .= "Host: $host\r\n";
+            $out .= "Connection: Close\r\n\r\n";
+            fwrite($fp, $out);
+            fclose($fp);
+        }
+    }
+
     // Success: redirect to thank you page
     header("Location: /$service/thank-you.php");
     exit;
