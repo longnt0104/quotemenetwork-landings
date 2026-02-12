@@ -237,7 +237,7 @@ if ($response['success']) {
 
     // Handle CapCloud postback for 'bathrooms'
     if ($service === 'bathrooms' && !empty($sub2)) {
-        $encodedSub2 = urlencode($sub2);
+        $encodedSub2 = $sub2;
         $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$encodedSub2}";
 
         @file_get_contents($url);
