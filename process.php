@@ -227,47 +227,20 @@ $response = $api->submitLead($leadData);
 if ($response['success']) {
     // Handle SUB2 postback
     if (!empty($sub2)) {
+        $encodedSub2 = urlencode($sub2);
+        $url = "https://www.rzmef8trk.com/?nid=3049&verification_token=daHqoQfKqoIieSWNcAQthjqF6s6DOH&transaction_id={$encodedSub2}&amount=30";
 
-        $sub2 = urlencode($sub2);
-
-        $url = "https://www.rzmef8trk.com/?nid=3049&verification_token=daHqoQfKqoIieSWNcAQthjqF6s6DOH&transaction_id={$sub2}&amount=30";
-
-        $parts = parse_url($url);
-
-        $host = $parts['host'];
-        $path = $parts['path'] . '?' . $parts['query'];
-
-        $fp = fsockopen('ssl://' . $host, 443, $errno, $errstr, 1);
-        if ($fp) {
-            $out = "GET $path HTTP/1.1\r\n";
-            $out .= "Host: $host\r\n";
-            $out .= "Connection: Close\r\n\r\n";
-
-            fwrite($fp, $out);
-            fclose($fp);
-        }
-
+        // Use file_get_contents as requested
+        // Using @ to suppress warnings if the remote server is down, so the user flow isn't interrupted
+        @file_get_contents($url);
     }
 
     // Handle CapCloud postback for 'bathrooms'
     if ($service === 'bathrooms' && !empty($sub2)) {
-        $sub2 = urlencode($sub2);
-        // http://www.capcloudrunr.com/aff_lsr?transaction_id={s2}
-        $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$sub2}";
+        $encodedSub2 = urlencode($sub2);
+        $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$encodedSub2}";
 
-        // Fire and forget (simple GET)
-        $parts = parse_url($url);
-        $host = $parts['host'];
-        $path = $parts['path'] . '?' . $parts['query'];
-
-        $fp = fsockopen($host, 80, $errno, $errstr, 1);
-        if ($fp) {
-            $out = "GET $path HTTP/1.1\r\n";
-            $out .= "Host: $host\r\n";
-            $out .= "Connection: Close\r\n\r\n";
-            fwrite($fp, $out);
-            fclose($fp);
-        }
+        @file_get_contents($url);
     }
 
     // Success: redirect to thank you page
