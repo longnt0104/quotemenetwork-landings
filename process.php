@@ -240,7 +240,29 @@ if ($response['success']) {
         $encodedSub2 = $sub2;
         $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$encodedSub2}";
 
-        @file_get_contents($url);
+        $ch = curl_init($url);
+
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,  // capture response
+            CURLOPT_TIMEOUT => 10,
+            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_FOLLOWLOCATION => true,
+        ]);
+
+        $response = curl_exec($ch);
+        $error = curl_error($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        curl_close($ch);
+
+        echo "HTTP CODE: " . $httpCode . PHP_EOL;
+
+        if ($error) {
+            echo "cURL ERROR: " . $error . PHP_EOL;
+        } else {
+            echo "RESPONSE:" . PHP_EOL;
+            echo $response;
+        }
     }
 
     // Success: redirect to thank you page
