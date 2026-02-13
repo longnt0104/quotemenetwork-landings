@@ -182,6 +182,7 @@ $config = $serviceConfig[$service];
 require_once __DIR__ . '/ZipLookup.php';
 $api = new LeadAPI();
 $sub2 = pick("SUB2");
+$s2 = pick("S2");
 
 // Lookup city/state/county from ZIP
 $zip = pick("zip");
@@ -236,33 +237,10 @@ if ($response['success']) {
     }
 
     // Handle CapCloud postback for 'bathrooms'
-    if ($service === 'bathrooms' && !empty($sub2)) {
-        $encodedSub2 = $sub2;
-        $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$encodedSub2}";
+    if ($service === 'bathrooms' && !empty($s2)) {
+        $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$s2}";
 
-        $ch = curl_init($url);
-
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,  // capture response
-            CURLOPT_TIMEOUT => 10,
-            CURLOPT_CONNECTTIMEOUT => 5,
-            CURLOPT_FOLLOWLOCATION => true,
-        ]);
-
-        $response = curl_exec($ch);
-        $error = curl_error($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-        curl_close($ch);
-
-        echo "HTTP CODE: " . $httpCode . PHP_EOL;
-
-        if ($error) {
-            echo "cURL ERROR: " . $error . PHP_EOL;
-        } else {
-            echo "RESPONSE:" . PHP_EOL;
-            echo $response;
-        }
+        @file_get_contents($url);
     }
 
     // Success: redirect to thank you page

@@ -20,10 +20,15 @@ if ($aUrl != null) {
 }
 
 $sub2 = '';
+$s2 = '';
 if (!empty($_GET)) {
   foreach ($_GET as $key => $val) {
-    if (strcasecmp($key, 'sub2') === 0 || strcasecmp($key, 's2') === 0) {
+    if (strcasecmp($key, 'sub2') === 0) {
       $sub2 = $val;
+      break;
+    }
+    if (strcasecmp($key, 's2') === 0) {
+      $s2 = $val;
       break;
     }
   }
@@ -338,6 +343,8 @@ if (!empty($_GET)) {
         <input type="hidden" name="_service" value="bathrooms">
         <!-- Optional tracking -->
         <input type="hidden" name="SUB2" value="<?php echo htmlspecialchars($sub2); ?>">
+        <input type="hidden" name="S2" value="<?php echo htmlspecialchars($s2); ?>">
+
         <input type="hidden" name="SRC" value="<?php echo htmlspecialchars($src); ?>">
         <input type="hidden" name="utm_source"
           value="<?php echo htmlspecialchars(isset($_GET['utm_source']) ? $_GET['utm_source'] : ''); ?>">
