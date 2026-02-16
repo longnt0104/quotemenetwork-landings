@@ -361,6 +361,7 @@ if (!empty($_GET)) {
           <button type="submit" class="btn btn-primary" id="submitBtn">Get My Free Quote</button>
         </div>
       </form>
+      <?php include '../footer.php'; ?>
     </div>
   </div>
 

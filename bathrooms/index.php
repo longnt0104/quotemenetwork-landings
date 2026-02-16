@@ -470,8 +470,11 @@ if (!empty($_GET)) {
         <div class="footerLinks">
           <a href="./privacy-policy.php" target="_blank" rel="noopener">Privacy Policy</a>
         </div>
-      </form>
+        <?php include '../footer.php'; ?>
     </div>
+    </form>
+
+  </div>
   </div>
 
   <script>

@@ -246,6 +246,7 @@ if (!empty($_GET)) {
         <input placeholder="ZIP Code" name="zip" required>
         <button type="submit">See If I Qualify</button>
       </form>
+      <?php include '../footer.php'; ?>
     </div>
   </div>
 </body>
