@@ -449,6 +449,10 @@ if (!empty($_GET)) {
             <label for="phone">Phone</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" required>
           </div>
+          <div class="field">
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder="">
+          </div>
 
           <div class="field">
             <label for="zip">ZIP code</label>
@@ -559,7 +563,7 @@ if (!empty($_GET)) {
         return true;
       }
       if (idx === 3) {
-        const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'zip'];
+        const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'address', 'zip'];
         if (!requireFilled(requiredFields)) {
           // focus the first empty field
           for (const f of requiredFields) {

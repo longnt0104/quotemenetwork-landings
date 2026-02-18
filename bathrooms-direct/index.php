@@ -377,6 +377,10 @@ if (!empty($_GET)) {
             <label for="phone">Phone</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" required>
             <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">Used only for quote follow-up. No spam.</div>
+            <div class="field">
+              <label for="address">Address</label>
+              <input id="address" name="address" type="text" autocomplete="street-address" placeholder="">
+            </div>
           </div>
 
           <div class="field">
@@ -424,7 +428,7 @@ if (!empty($_GET)) {
     }
 
     function validateForm() {
-      const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'zip'];
+      const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'address', 'zip'];
       if (!requireFilled(requiredFields)) {
         // focus the first empty field
         for (const f of requiredFields) {

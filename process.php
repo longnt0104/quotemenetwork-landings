@@ -204,7 +204,7 @@ $leadData = [
     'firstname' => pick("first_name"),
     'lastname' => pick("last_name"),
     'phone' => pick("phone"),
-    'address' => 'Empty',
+    'address' => pick("address"),
 
     // Optional fields
     'propertytype' => pick("project_type"),

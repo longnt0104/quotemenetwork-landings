@@ -242,6 +242,7 @@ if (!empty($_GET)) {
         </div>
 
         <input placeholder="Phone" name="phone" required>
+        <input placeholder="Address" name="address" required>
         <input placeholder="Email" name="email" type="email" required>
         <input placeholder="ZIP Code" name="zip" required>
         <button type="submit">See If I Qualify</button>

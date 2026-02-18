@@ -201,6 +201,7 @@ if (!empty($_GET)) {
                     <input name="last_name" placeholder="Last name" required>
                     <input name="email" placeholder="Email" required>
                     <input name="phone" placeholder="Phone" required>
+                    <input name="address" placeholder="Address" required>
                     <input name="zip" placeholder="ZIP Code" required>
                     <small>By submitting you agree to our <a href="./privacy-policy.php">Privacy Policy</a></small>
                 </div>

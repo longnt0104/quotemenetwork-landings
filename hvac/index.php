@@ -439,6 +439,10 @@ if (!empty($_GET)) {
             <label for="phone">Phone</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" required>
           </div>
+          <div class="field">
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder="">
+          </div>
 
           <div class="field">
             <label for="zip">ZIP code</label>
@@ -518,7 +522,7 @@ if (!empty($_GET)) {
         }
         return true;
       }
-      const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'zip'];
+      const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'address', 'zip'];
       for (const f of requiredFields) {
         const el = document.getElementById(f);
         if (!el.value.trim()) { el.focus(); showError('Please complete all contact fields.'); return false; }
