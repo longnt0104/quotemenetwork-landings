@@ -46,9 +46,9 @@ $isDarkTheme = (strpos($_SERVER['REQUEST_URI'] ?? '', 'roof-rejuvenation') !== f
 
 <div class="consent-footer">
     <p>
-        We respect your privacy and want to make sure you are aware of a few things. By clicking the box, you authorize
-        QuoteMe, to call the mobile number or landline number provided, and you understand that they may use authorized
-        phone technology to call you, and that your consent is not required to purchase products or services.
+        We respect your privacy and want to make sure you are aware of a few things. By clicking the box, you
+        authorization QuoteMe, to call the mobile number or landline number provided, and you understand that they may
+        use autodialed and or prerecorded calls or messages.
     </p>
     <p>
         By selecting 'Yes' above, message and data rates apply. Message frequency varies and depends on the activity of
