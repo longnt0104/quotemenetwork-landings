@@ -46,14 +46,16 @@ $isDarkTheme = (strpos($_SERVER['REQUEST_URI'] ?? '', 'roof-rejuvenation') !== f
 
 <div class="consent-footer">
     <p>
-        We respect your privacy and want to make sure you are aware of a few things. By clicking the box, you
-        authorization QuoteMe, to call the mobile number or landline number provided, and you understand that they may
-        use autodialed and or prerecorded calls or messages.
+        We respect your privacy and want to make sure you are aware of a few things. By clicking the box, you authorize
+        QuoteMe and its <a href="https://www.networx.com/third-party-contractors" target="_blank"
+            rel="noopener">partners</a>, to call the mobile number or landline number provided, and you understand that
+        they
+        may use autodialed and or prerecorded calls or messages.
     </p>
     <p>
         By selecting 'Yes' above, message and data rates apply. Message frequency varies and depends on the activity of
         the estimate. You can opt out by responding STOP at any time. You can text Help at 469-304-2103. Please review
-        our <a href="./privacy-policy.php">Privacy Policy</a>, and our <a href="#">Terms of
+        our <a href="./privacy-policy.php">Privacy Policy</a>, and our <a href="./">Terms of
             Service</a>.
     </p>
 </div>
