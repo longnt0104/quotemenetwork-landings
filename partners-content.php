@@ -1,12 +1,13 @@
 <?php
 // partners-content.php — Shared CSS + content for all partners pages
+$isDarkTheme = (strpos($_SERVER['REQUEST_URI'] ?? '', 'roof-rejuvenation') !== false);
 ?>
 <style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        background: #f6f7fb;
-        color: #111;
+        background: <?php echo $isDarkTheme ? '#0b0f17' : '#f6f7fb'; ?>;
+        color: <?php echo $isDarkTheme ? '#eaf0ff' : '#111'; ?>;
     }
 
     .wrap {
@@ -16,8 +17,8 @@
     }
 
     .card {
-        background: #fff;
-        border: 1px solid #e5e7eb;
+        background: <?php echo $isDarkTheme ? '#111827' : '#fff'; ?>;
+        border: 1px solid <?php echo $isDarkTheme ? '#1f2937' : '#e5e7eb'; ?>;
         border-radius: 14px;
         padding: 28px;
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
@@ -25,17 +26,17 @@
 
     h1 {
         margin-top: 0;
-        color: #0077cc;
+        color: <?php echo $isDarkTheme ? '#22c55e' : '#0077cc'; ?>;
     }
 
     p,
     li {
         line-height: 1.5;
-        color: #1f2937;
+        color: <?php echo $isDarkTheme ? '#9aa4b2' : '#1f2937'; ?>;
     }
 
     .muted {
-        color: #6b7280;
+        color: <?php echo $isDarkTheme ? '#6b7280' : '#6b7280'; ?>;
         font-size: 13px;
     }
 
@@ -46,17 +47,18 @@
     }
 
     .partner-list li {
-        border: 1px solid #e5e7eb;
+        border: 1px solid <?php echo $isDarkTheme ? '#1f2937' : '#e5e7eb'; ?>;
         border-radius: 10px;
         padding: 16px 20px;
         margin-bottom: 12px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        background: <?php echo $isDarkTheme ? '#0d1117' : 'transparent'; ?>;
     }
 
     .partner-list li a {
-        color: #0077cc;
+        color: <?php echo $isDarkTheme ? '#22c55e' : '#0077cc'; ?>;
         font-weight: 600;
         text-decoration: none;
         font-size: 16px;
