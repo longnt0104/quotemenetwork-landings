@@ -47,8 +47,8 @@ $isDarkTheme = (strpos($_SERVER['REQUEST_URI'] ?? '', 'roof-rejuvenation') !== f
 <div class="consent-footer">
     <p>
         We respect your privacy and want to make sure you are aware of a few things. By clicking the box, you authorize
-        QuoteMe and its <a href="https://www.networx.com/third-party-contractors" target="_blank"
-            rel="noopener">partners</a>, to call the mobile number or landline number provided, and you understand that
+        QuoteMe and its <a href="./partners.php" target="_blank" rel="noopener">partners</a>, to call the mobile number
+        or landline number provided, and you understand that
         they
         may use autodialed and or prerecorded calls or messages.
     </p>
