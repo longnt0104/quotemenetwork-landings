@@ -66,6 +66,13 @@ $serviceConfig = [
         'postback_enabled' => false,
         'postback_urls' => []
     ],
+    'windows-direct' => [
+        'src' => 'QMN Windows Direct',
+        'product' => 'Windows',
+        'subcat' => 'Windows - Window Installation',
+        'postback_enabled' => false,
+        'postback_urls' => []
+    ],
     'painting' => [
         'src' => 'QMN Painting',
         'product' => 'Painting',
@@ -190,6 +197,7 @@ $geo = ZipLookup::lookup($zip);
 $city = $geo['city'] ?? '';
 $state = $geo['state'] ?? '';
 $county = $geo['county'] ?? '';
+$answer1 = pick("answer1") ?? "";
 
 // Build lead data
 $leadData = [
@@ -214,6 +222,7 @@ $leadData = [
     'city' => $city,
     'state' => $state,
     'county' => $county,
+    'answer1' => $answer1,
 
     // SUB2 tracking
     'attribute1' => $sub2,

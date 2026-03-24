@@ -182,6 +182,11 @@
                 <p>Quick and direct HVAC quotes</p>
             </a>
 
+            <a href="/windows-direct/" class="service-card">
+                <h2>🪟 Windows Direct</h2>
+                <p>Quick and direct window replacement quotes</p>
+            </a>
+
             <a href="/roofing/" class="service-card">
                 <h2>🏠 Roofing Services</h2>
                 <p>Quality roofing installation and maintenance</p>
