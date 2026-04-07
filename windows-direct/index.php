@@ -1,4 +1,5 @@
 <?php
+// https://pages.quotemenetwork.com/windows-direct/?atp=2dj95R&s1=testoffer&s2=102d34ab8d4a3cc9126c3995116d1d&s3=
 // Extract SRC and SUB2 parameters (case-insensitive)
 $src = '';
 $aUrl = null;
@@ -20,10 +21,15 @@ if ($aUrl != null) {
 }
 
 $sub2 = '';
+$s2 = '';
 if (!empty($_GET)) {
   foreach ($_GET as $key => $val) {
     if (strcasecmp($key, 'sub2') === 0) {
       $sub2 = $val;
+      break;
+    }
+    if (strcasecmp($key, 's2') === 0) {
+      $s2 = $val;
       break;
     }
   }
@@ -310,6 +316,7 @@ if (!empty($_GET)) {
         <input type="hidden" name="_service" value="windows-direct">
         <input type="hidden" name="SRC" value="<?php echo htmlspecialchars($src); ?>">
         <input type="hidden" name="SUB2" value="<?php echo htmlspecialchars($sub2); ?>">
+        <input type="hidden" name="S2" value="<?php echo htmlspecialchars($s2); ?>">
         <input type="hidden" name="utm_source" value="<?php echo htmlspecialchars($_GET['utm_source'] ?? ''); ?>">
         <input type="hidden" name="utm_campaign" value="<?php echo htmlspecialchars($_GET['utm_campaign'] ?? ''); ?>">
         <input type="hidden" name="utm_medium" value="<?php echo htmlspecialchars($_GET['utm_medium'] ?? ''); ?>">
