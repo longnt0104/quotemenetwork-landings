@@ -246,7 +246,7 @@ if ($response['success']) {
     }
 
     // Handle CapCloud postback for 'bathrooms'
-    if ($service === 'bathrooms' && !empty($s2)) {
+    if (($service === 'bathrooms' || $service === 'windows-direct' ) && !empty($s2)) {
         $url = "http://www.capcloudrunr.com/aff_lsr?transaction_id={$s2}";
 
         @file_get_contents($url);
