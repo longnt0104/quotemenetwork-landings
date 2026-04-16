@@ -216,6 +216,11 @@
                 <h2>🌧️ Gutter Services</h2>
                 <p>Professional gutter installation and maintenance</p>
             </a>
+
+            <a href="/appliance-repair/" class="service-card">
+                <h2>🔌 Appliance Repair</h2>
+                <p>Appliance repair jobs for technicians in your area</p>
+            </a>
         </div>
     </div>
 
